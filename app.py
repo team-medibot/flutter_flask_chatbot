@@ -6,6 +6,6 @@ app = Flask(__name__)
 def response():
     query = dict(request.form)['query']
     res = query + " " + time.ctime()
-    return res
+    return jsonify({res})
 if __name__=="__main__":
     app.run(host="0.0.0.0",)
