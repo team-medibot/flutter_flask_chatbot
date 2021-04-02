@@ -1,8 +1,8 @@
 
 from flask import Flask, jsonify,request
 
-app = Flask(__name__);
-@app.route("/Bot", methods=["POST"])
+app = Flask(__name__)
+@app.route("/bot", methods=["POST"])
 def response():
     query = dict(request.form)['query']
     if(query=='Hi'):
