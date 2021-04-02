@@ -5,7 +5,7 @@ app = Flask(__name__)
 @app.route("/bot", methods=["POST"])
 def response():
     query = dict(request.form)['query']
-    if query=="hi":
+    if(query=="hi"):
         res = "Hello MediBot here!" + " " + time.ctime()
     return jsonify({"response" : res})
 if __name__=="__main__":
