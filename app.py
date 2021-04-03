@@ -3,7 +3,7 @@ import pandas as pd
 
 app = Flask(__name__)
 
-dataset = pd.read_csv("https://github.com/team-medibot/flutter_flask_chatbot/blob/main/Training.csv")
+dataset = pd.read_csv("https://raw.githubusercontent.com/team-medibot/flutter_flask_chatbot/main/Training.csv")
 
 @app.route("/bot", methods=["POST"])
 def response():
