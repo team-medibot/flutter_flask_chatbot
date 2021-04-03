@@ -1,6 +1,10 @@
 from flask import Flask, jsonify,request
+import pandas as pd
 
 app = Flask(__name__)
+
+dataset = pd.read_csv("Training.csv")
+
 @app.route("/bot", methods=["POST"])
 def response():
     query = dict(request.form)['query']
