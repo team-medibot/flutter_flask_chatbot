@@ -1,4 +1,4 @@
-'''from flask import Flask, jsonify,request
+from flask import Flask, jsonify,request
 import pandas as pd
 
 app = Flask(__name__)
@@ -134,12 +134,7 @@ def main():
 
     disease = predict_disease2(model,train.drop('prognosis',axis=1))
     #print(f'\nyou may have {disease[0]}')
-'''@app.route("/bot", methods=["POST"])
-def response(query):
-    query = dict(request.form)['query']
-    if(query == "Hi"):
-        result = "Hello"                                                                                                                                                       
-    return jsonify({"response" : result})'''
+
 @app.route("/bot", methods=["POST"])
 def getResponse():
     query = dict(request.form)['query']                                                                                                                                                    
@@ -158,4 +153,4 @@ if __name__=="__main__":
 
     disease = predict_disease2(model,train.drop('prognosis',axis=1))
     #print(f'\nyou may have {disease[0]}')
-    app.run(host="0.0.0.0",)
+    app.run(host="0.0.0.0",)'''
