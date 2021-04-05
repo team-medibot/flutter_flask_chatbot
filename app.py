@@ -1,4 +1,4 @@
-from flask import Flask, jsonify,request
+'''from flask import Flask, jsonify,request
 import pandas as pd
 
 app = Flask(__name__)
@@ -13,8 +13,8 @@ def response():
     return jsonify({"response" : result})
 if __name__=="__main__":
     app.run(host="0.0.0.0",)
-'''
 
+'''
 
 from flask import Flask, jsonify,request
 import pandas as pd
@@ -154,4 +154,5 @@ if __name__=="__main__":
 
     disease = predict_disease2(model,train.drop('prognosis',axis=1))
     #print(f'\nyou may have {disease[0]}')
-    app.run(host="0.0.0.0",)'''
+    setResponse(f'you may have {disease[0]}')
+    app.run(host="0.0.0.0",)
