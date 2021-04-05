@@ -59,6 +59,8 @@ def predict_disease2(model,data):
     getResponse()
     name = query
     #print("Bot: Could you please help me out to know about your symptoms better")
+    setResponse(" Could you please help me out to know about your symptoms better")
+    setResponse(" Please answer the following symptoms with 'yes' or 'no' only\n Type quit whenever you want to end the chat")
     #print("Bot: Please answer the following symptoms with 'yes' or 'no' only\n Type quit whenever you want to end the chat")
     i = 0
     result = dict(zip(data.columns,[0]*len(data.columns)))
@@ -125,27 +127,14 @@ def predict_disease2(model,data):
     #print("\nProcess Completed")
     return model.predict(pred_data)
 
-
-def main():
-    train, test = load_data()
-
-    #analyze_data(train)
-
-    model = train_test(train,test)
-
-    disease = predict_disease2(model,train.drop('prognosis',axis=1))
-    #print(f'\nyou may have {disease[0]}')
-
 @app.route("/bot", methods=["POST"])
 def getResponse():
     query = dict(request.form)['query']                                                                                                                                                    
     #return jsonify({"response" : result})
-@app.route("/bot", methods=["POST"])
 def setResponse(query):
     #query = dict(request.form)['query']                                                                                                                                                    
     return jsonify({"response" : query})
 if __name__=="__main__":
-    #main()
     train, test = load_data()
 
     #analyze_data(train)
